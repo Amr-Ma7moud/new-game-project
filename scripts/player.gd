@@ -128,7 +128,8 @@ func _on_damage_timer_timeout() -> void:
 	is_invulnerable = false
 
 func play_hurt_sound():
-	hurt_sound.play()
+	if not hurt_sound.playing:
+		hurt_sound.play()
 
 func take_damage(dmg: int) -> void :
 	print("Took Damage")
@@ -152,7 +153,6 @@ func _check_hurtbox_overlaps() -> void:
 		return
 	for body in hurtbox.get_overlapping_bodies():
 		if body.has_method("give_damage"):
-			play_hurt_sound()
 			play_hurt_sound()
 			take_damage(body.give_damage())
 			break;
