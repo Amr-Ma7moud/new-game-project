@@ -492,7 +492,8 @@ stream = ExtResource("4_u4p4d")
 [node name="attack_sound" type="AudioStreamPlayer" parent="audio" unique_id=840078878]
 stream = ExtResource("3_efpdg")
 
-[node name="healthBar" type="ProgressBar" parent="." unique_id=699396524]
+[node name="healthbar" type="ProgressBar" parent="." unique_id=699396524]
+modulate = Color(0.279881, 0.86377275, 0.15396988, 1)
 offset_left = -5.5
 offset_top = 17.25
 offset_right = 141.99998
