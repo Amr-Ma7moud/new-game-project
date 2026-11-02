@@ -132,7 +132,6 @@ func play_hurt_sound():
 		hurt_sound.play()
 
 func take_damage(dmg: int) -> void :
-	print("Took Damage")
 	if is_invulnerable:
 		return
 	
@@ -140,14 +139,14 @@ func take_damage(dmg: int) -> void :
 	is_invulnerable = true
 	
 	current_health -= dmg
-	print("Current Health:", current_health )
+	print("Player Current Health:", current_health )
 	if current_health <= 0 :
 		is_dying = true
 		velocity = Vector2.ZERO
 		animated_sprite.play("death")
 		await animated_sprite.animation_finished
-
-
+		await get_tree().create_timer(2.5).timeout
+		queue_free()
 func _check_hurtbox_overlaps() -> void:
 	if is_invulnerable:
 		return
@@ -159,8 +158,8 @@ func _check_hurtbox_overlaps() -> void:
 
 
 func _on_timer_timeout() -> void:
-	print(current_health)
-	current_health += 15
-	if current_health > max_health:
-		current_health = max_health
+	if current_health < 100:
+		current_health += 15
+		if current_health > max_health:
+			current_health = max_health
 		print("current Health updated to:" ,current_health)

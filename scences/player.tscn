@@ -481,6 +481,8 @@ position = Vector2(-0.75, 7)
 shape = SubResource("CapsuleShape2D_mykap")
 
 [node name="regenration_timer" type="Timer" parent="." unique_id=1797052816]
+wait_time = 8.0
+autostart = true
 
 [node name="audio" type="Node" parent="." unique_id=1326372857]
 
@@ -489,5 +491,13 @@ stream = ExtResource("4_u4p4d")
 
 [node name="attack_sound" type="AudioStreamPlayer" parent="audio" unique_id=840078878]
 stream = ExtResource("3_efpdg")
+
+[node name="healthBar" type="ProgressBar" parent="." unique_id=699396524]
+offset_left = -5.5
+offset_top = 17.25
+offset_right = 141.99998
+offset_bottom = 29.249985
+scale = Vector2(0.1, 0.1)
+show_percentage = false
 
 [connection signal="timeout" from="regenration_timer" to="." method="_on_timer_timeout"]
