@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://1q3mhmuhvoor" path="res://art/player.png" id="2_efpdg"]
 [ext_resource type="AudioStream" uid="uid://cpkel1pufudck" path="res://assets/sound/sword_attack.mp3" id="3_efpdg"]
 [ext_resource type="AudioStream" uid="uid://dw17lywwo65hv" path="res://assets/sound/hurt_sound_effect.mp3" id="4_u4p4d"]
+[ext_resource type="AudioStream" uid="uid://c545tptp1nsn6" path="res://assets/sound/death_sound_effect.mp3" id="5_7khn4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u4p4d"]
 atlas = ExtResource("2_efpdg")
@@ -491,6 +492,9 @@ stream = ExtResource("4_u4p4d")
 
 [node name="attack_sound" type="AudioStreamPlayer" parent="audio" unique_id=840078878]
 stream = ExtResource("3_efpdg")
+
+[node name="death_sound" type="AudioStreamPlayer" parent="audio" unique_id=1983063032]
+stream = ExtResource("5_7khn4")
 
 [node name="healthbar" type="ProgressBar" parent="." unique_id=699396524]
 modulate = Color(0.279881, 0.86377275, 0.15396988, 1)

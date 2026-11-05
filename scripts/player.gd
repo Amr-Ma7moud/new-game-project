@@ -18,6 +18,7 @@ extends CharacterBody2D
 # Sounds
 @onready var attack_sound: AudioStreamPlayer = $audio.get_child(1)
 @onready var hurt_sound: AudioStreamPlayer = $audio.get_child(0)
+@onready var death_sound: AudioStreamPlayer = $audio/death_sound
 
 
 
@@ -148,6 +149,7 @@ func take_damage(dmg: int) -> void :
 		velocity = Vector2.ZERO
 		animated_sprite.play("death")
 		await animated_sprite.animation_finished
+		death_sound.play()
 		await get_tree().create_timer(2.5).timeout
 		queue_free()
 func _check_hurtbox_overlaps() -> void:
