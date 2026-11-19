@@ -440,7 +440,9 @@ script = ExtResource("1_3j5lm")
 texture_filter = 1
 position = Vector2(0.25, -1.75)
 sprite_frames = SubResource("SpriteFrames_hbu4s")
-animation = &"death"
+animation = &"side_attack"
+frame = 3
+frame_progress = 1.0
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1009381678]

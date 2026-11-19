@@ -4,6 +4,9 @@ extends CharacterBody2D
 # New stats
 @export var damage_amount: int = 10
 @export var max_health: int = 100
+@export var dangerous_health_level: int = 20
+@export var DANGER_CODE = '#f02805'
+@export var HEALTHY_CODE = '#47dc27'
 
 # Node references
 @onready var damage_area: Area2D = $damage_area
@@ -19,7 +22,6 @@ extends CharacterBody2D
 @onready var attack_sound: AudioStreamPlayer = $audio.get_child(1)
 @onready var hurt_sound: AudioStreamPlayer = $audio.get_child(0)
 @onready var death_sound: AudioStreamPlayer = $audio/death_sound
-
 
 
 @onready var animated_sprite = $AnimatedSprite2D
@@ -157,8 +159,10 @@ func _check_hurtbox_overlaps() -> void:
 		return
 	for body in hurtbox.get_overlapping_bodies():
 		if body.has_method("give_damage"):
-			play_hurt_sound()
-			take_damage(body.give_damage())
+			var dmg: int = body.give_damage()
+			if dmg:
+				play_hurt_sound()
+				take_damage(dmg)
 			break;
 	update_healthbar()
 
@@ -172,7 +176,12 @@ func _on_timer_timeout() -> void:
  
 func update_healthbar() -> void :
 	$healthbar.value = current_health
-	if current_health == 100 :
+	if current_health == 100 or current_health <= 0 :
 		$healthbar.visible = false
 	else :
 		$healthbar.visible = true
+		if current_health <= dangerous_health_level:
+			$healthbar.modulate = DANGER_CODE
+		else :
+			$healthbar.modulate = HEALTHY_CODE
+			

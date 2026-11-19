@@ -6,10 +6,9 @@
 [node name="world" type="Node2D" unique_id=677305394]
 
 [node name="player" parent="." unique_id=2094898907 instance=ExtResource("1_4ud6b")]
-position = Vector2(80, 103)
+position = Vector2(251, 255)
 scale = Vector2(8, 8)
 
 [node name="slime" parent="." unique_id=1484617506 instance=ExtResource("2_1kupj")]
-position = Vector2(894, 388)
+position = Vector2(808, 399)
 scale = Vector2(8, 8)
-speed = 40.0

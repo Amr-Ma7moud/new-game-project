@@ -142,8 +142,7 @@ script = ExtResource("1_gssbl")
 texture_filter = 1
 position = Vector2(-1.5, 1)
 sprite_frames = SubResource("SpriteFrames_fp7ex")
-animation = &"death"
-frame_progress = 0.57589227
+animation = &"side_walk"
 speed_scale = 2.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1849842098]
@@ -157,3 +156,13 @@ collision_layer = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area" unique_id=460962219]
 position = Vector2(-1, 1.75)
 shape = SubResource("CircleShape2D_fp7ex")
+
+[node name="healthbar" type="ProgressBar" parent="." unique_id=809901351]
+modulate = Color(0.94, 0.15697993, 0.018799981, 1)
+offset_left = -8.25
+offset_top = 8.250001
+offset_right = 139.24998
+offset_bottom = 20.249985
+scale = Vector2(0.1, 0.1)
+max_value = 40.0
+show_percentage = false
