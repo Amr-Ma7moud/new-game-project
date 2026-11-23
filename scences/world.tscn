@@ -1,7 +1,16 @@
-[gd_scene format=3 uid="uid://c0rilew6v0d1o"]
+[gd_scene format=4 uid="uid://c0rilew6v0d1o"]
 
 [ext_resource type="PackedScene" uid="uid://v2uqmvj2xgpy" path="res://scences/player.tscn" id="1_4ud6b"]
 [ext_resource type="PackedScene" uid="uid://b1085dt5nqsvb" path="res://scences/slime.tscn" id="2_1kupj"]
+[ext_resource type="Texture2D" uid="uid://devqcggsibbqb" path="res://assets/objects/objects.png" id="3_1kupj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oou3t"]
+texture = ExtResource("3_1kupj")
+0:5/size_in_atlas = Vector2i(3, 4)
+0:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_yuhkk"]
+sources/0 = SubResource("TileSetAtlasSource_oou3t")
 
 [node name="world" type="Node2D" unique_id=677305394]
 
@@ -12,4 +21,7 @@ scale = Vector2(8, 8)
 [node name="slime" parent="." unique_id=1484617506 instance=ExtResource("2_1kupj")]
 position = Vector2(894, 388)
 scale = Vector2(8, 8)
-speed = 40.0
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1457606218]
+tile_map_data = PackedByteArray("AAATAAoAAAAAAAUAAAD0/wYAAAAAAAUAAAAOABcAAAAAAAUAAAAqAAYAAAAAAAUAAAAjABoAAAAAAAUAAABHACIAAAAAAAUAAABCAAgAAAAAAAUAAAApAPz/AAAAAAUAAAAXAAMAAAAAAAUAAAADAPb/AAAAAAUAAAD9/yIAAAAAAAUAAAD2/xUAAAAAAAUAAAA=")
+tile_set = SubResource("TileSet_yuhkk")
