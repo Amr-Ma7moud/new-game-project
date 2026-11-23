@@ -492,10 +492,10 @@ stream = ExtResource("3_efpdg")
 
 [node name="healthbar" type="ProgressBar" parent="." unique_id=1035859414]
 modulate = Color(0, 1, 0, 1)
-offset_left = -8.750004
-offset_top = 18.5
-offset_right = 113.25
-offset_bottom = 45.5
+offset_left = -5.5
+offset_top = 17.75
+offset_right = 78.24999
+offset_bottom = 27.75
 scale = Vector2(0.2, 0.2)
 show_percentage = false
 
