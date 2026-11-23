@@ -499,4 +499,6 @@ offset_bottom = 27.75
 scale = Vector2(0.2, 0.2)
 show_percentage = false
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=361782203]
+
 [connection signal="timeout" from="regenration_timer" to="." method="_on_timer_timeout"]
