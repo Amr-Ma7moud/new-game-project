@@ -35,12 +35,10 @@ y_sort_enabled = true
 [node name="player" parent="." unique_id=2094898907 instance=ExtResource("1_4ud6b")]
 y_sort_enabled = true
 position = Vector2(58, 100)
-scale = Vector2(2.5, 2.5)
-speed = 200.0
 
 [node name="slime" parent="." unique_id=1484617506 instance=ExtResource("2_1kupj")]
 y_sort_enabled = true
-position = Vector2(894, 388)
+position = Vector2(703, 181.00005)
 scale = Vector2(5, 5)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1457606218]
