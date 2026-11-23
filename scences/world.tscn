@@ -10,6 +10,7 @@ texture = ExtResource("3_1kupj")
 0:5/size_in_atlas = Vector2i(3, 4)
 0:5/0 = 0
 0:5/0/y_sort_origin = 20
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-11.055556, 13.493004, 9.662731, 12.970692, 11.22966, 21.327648, -10.881453, 23.06868)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_68tjo"]
 texture = ExtResource("4_oou3t")
@@ -24,6 +25,7 @@ texture = ExtResource("4_oou3t")
 3:2/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_yuhkk"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_oou3t")
 sources/1 = SubResource("TileSetAtlasSource_68tjo")
 
@@ -33,6 +35,8 @@ y_sort_enabled = true
 [node name="player" parent="." unique_id=2094898907 instance=ExtResource("1_4ud6b")]
 y_sort_enabled = true
 position = Vector2(58, 100)
+scale = Vector2(2.5, 2.5)
+speed = 200.0
 
 [node name="slime" parent="." unique_id=1484617506 instance=ExtResource("2_1kupj")]
 y_sort_enabled = true
