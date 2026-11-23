@@ -3,25 +3,45 @@
 [ext_resource type="PackedScene" uid="uid://v2uqmvj2xgpy" path="res://scences/player.tscn" id="1_4ud6b"]
 [ext_resource type="PackedScene" uid="uid://b1085dt5nqsvb" path="res://scences/slime.tscn" id="2_1kupj"]
 [ext_resource type="Texture2D" uid="uid://devqcggsibbqb" path="res://assets/objects/objects.png" id="3_1kupj"]
+[ext_resource type="Texture2D" uid="uid://bq2nxj06kef4c" path="res://assets/tilesets/plains.png" id="4_oou3t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oou3t"]
 texture = ExtResource("3_1kupj")
 0:5/size_in_atlas = Vector2i(3, 4)
 0:5/0 = 0
+0:5/0/y_sort_origin = 20
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_68tjo"]
+texture = ExtResource("4_oou3t")
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_yuhkk"]
 sources/0 = SubResource("TileSetAtlasSource_oou3t")
+sources/1 = SubResource("TileSetAtlasSource_68tjo")
 
 [node name="world" type="Node2D" unique_id=677305394]
+y_sort_enabled = true
 
 [node name="player" parent="." unique_id=2094898907 instance=ExtResource("1_4ud6b")]
-position = Vector2(80, 103)
-scale = Vector2(8, 8)
+y_sort_enabled = true
+position = Vector2(58, 100)
+scale = Vector2(2.5, 2.5)
 
 [node name="slime" parent="." unique_id=1484617506 instance=ExtResource("2_1kupj")]
+y_sort_enabled = true
 position = Vector2(894, 388)
-scale = Vector2(8, 8)
+scale = Vector2(2.5, 2.5)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1457606218]
-tile_map_data = PackedByteArray("AAATAAoAAAAAAAUAAAD0/wYAAAAAAAUAAAAOABcAAAAAAAUAAAAqAAYAAAAAAAUAAAAjABoAAAAAAAUAAABHACIAAAAAAAUAAABCAAgAAAAAAAUAAAApAPz/AAAAAAUAAAAXAAMAAAAAAAUAAAADAPb/AAAAAAUAAAD9/yIAAAAAAAUAAAD2/xUAAAAAAAUAAAA=")
+z_index = 14
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAATAAoAAAAAAAUAAAD0/wYAAAAAAAUAAAAOABcAAAAAAAUAAAAqAAYAAAAAAAUAAAAjABoAAAAAAAUAAABHACIAAAAAAAUAAABCAAgAAAAAAAUAAAApAPz/AAAAAAUAAAAXAAMAAAAAAAUAAAADAPb/AAAAAAUAAAD9/yIAAAAAAAUAAAD2/xUAAAAAAAUAAAA4AP3/AQABAAAAAAA5AP3/AQACAAAAAAA6AP3/AQACAAAAAAA7AP3/AQACAAAAAAA8AP3/AQACAAAAAAA9AP3/AQACAAAAAAA+AP3/AQADAAAAAAA+AP7/AQADAAEAAAA+AP//AQADAAEAAAA+AAAAAQADAAIAAAA4AP7/AQABAAEAAAA5AP7/AQACAAEAAAA4AAAAAQABAAIAAAA4AP//AQABAAEAAAA5AAAAAQACAAIAAAA6AAAAAQACAAIAAAA7AAAAAQACAAIAAAA8AAAAAQACAAIAAAA9AAAAAQACAAIAAAA9AP//AQACAAEAAAA9AP7/AQACAAEAAAA8AP//AQACAAEAAAA8AP7/AQACAAEAAAA7AP7/AQACAAEAAAA7AP//AQACAAEAAAA6AP7/AQACAAEAAAA6AP//AQACAAEAAAA5AP//AQACAAEAAAAIAAgAAAAAAAUAAAA=")
 tile_set = SubResource("TileSet_yuhkk")
