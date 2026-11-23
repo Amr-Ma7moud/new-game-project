@@ -26,7 +26,6 @@ var is_dying: bool = false
 var last_direction: String = "down"
 
 func _physics_process(_2delta: float) -> void:
-	
 	var input_dir = Vector2.ZERO 
 	
 	if is_dying:
@@ -80,6 +79,7 @@ func _ready() -> void:
 	animated_sprite.animation_finished.connect(_on_animation_finished)
 	damage_area.body_entered.connect(_on_damage_area_body_entered)
 	damage_timer.timeout.connect(_on_damage_timer_timeout)
+	update_healthbar()
 
 func disable_all_hitboxes() -> void:
 	side_collision.disabled = true
@@ -156,6 +156,7 @@ func _check_hurtbox_overlaps() -> void:
 			play_hurt_sound()
 			take_damage(body.give_damage())
 			break;
+	update_healthbar()
 
 
 func _on_timer_timeout() -> void:
@@ -164,3 +165,11 @@ func _on_timer_timeout() -> void:
 	if current_health > max_health:
 		current_health = max_health
 		print("current Health updated to:" ,current_health)
+	update_healthbar()
+
+func update_healthbar() -> void:
+	$healthbar.value = current_health
+	if current_health == 100:
+		$healthbar.visible = false
+	else:
+		$healthbar.visible = true
